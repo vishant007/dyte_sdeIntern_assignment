@@ -8,3 +8,4 @@
 	"commit": "5e5342f",
 	"metadata": { "parentResourceId": "server-09887" }
 }
+{"level": "success", "message": "db-executed", "resourceId": "server-1234", "timestamp": "2023-11-18T19:53:47+00:00", "traceId": "abc-yyz-123", "spanId": "span-456", "commit": "5e5342f", "metadata": {"parentResourceId": "server-09887"}}
