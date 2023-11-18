@@ -1,7 +1,7 @@
-<!-- log_ingestor/templates/log_search.html -->
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" href="../static/css/logsearch.css" />
 		<title>Log Search</title>
 	</head>
 	<body>
@@ -10,10 +10,39 @@
 			{{ filter.form.as_p }}
 			<input type="submit" value="Search" />
 		</form>
+		{% if filter.form.is_bound and filter.form.is_valid %}
 		<ul>
-			{% for log_entry in log_entries %}
-			<li>{{ log_entry.timestamp }} - {{ log_entry.message }}</li>
+			{% for log_entry in filter.qs %}
+			<div class="main">
+				<ul class="cards">
+					{% for log_entry in log_entries %}
+					<li class="cards_item">
+						<div class="card">
+							<div class="card_content">
+								<div class="card_text">
+									<ul>
+										<li>
+											<strong>Level:</strong> {{ log_entry.level }}<br />
+											<strong>Message:</strong> {{ log_entry.message }}<br />
+											<strong>Resource ID:</strong> {{ log_entry.resourceId
+											}}<br />
+											<strong>Timestamp:</strong> {{ log_entry.timestamp }}<br />
+											<strong>Trace ID:</strong> {{ log_entry.traceId }}<br />
+											<strong>Span ID:</strong> {{ log_entry.spanId }}<br />
+											<strong>Commit:</strong> {{ log_entry.commit }}<br />
+											<strong>Parent Resource ID:</strong>
+											{{log_entry.parentResourceId}}<br />
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
 			{% endfor %}
 		</ul>
+		{% endif %}
 	</body>
 </html>
