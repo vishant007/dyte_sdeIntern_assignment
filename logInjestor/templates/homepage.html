@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../static/css/homepage.css" />
+
+		<title>Log Ingestor Homepage</title>
+	</head>
+	<body>
+		<h2 class="card_title">Log Ingestor Homepage</h2>
+		<div class="main">
+			<ul class="cards">
+				{% for log_entry in log_entries %}
+				<li class="cards_item">
+					<div class="card">
+						<div class="card_content">
+							<div class="card_text">
+								<ul>
+									<li>
+										<strong>Level:</strong> {{ log_entry.level }}<br />
+										<strong>Message:</strong> {{ log_entry.message }}<br />
+										<strong>Resource ID:</strong> {{ log_entry.resourceId }}<br />
+										<strong>Timestamp:</strong> {{ log_entry.timestamp }}<br />
+										<strong>Trace ID:</strong> {{ log_entry.traceId }}<br />
+										<strong>Span ID:</strong> {{ log_entry.spanId }}<br />
+										<strong>Commit:</strong> {{ log_entry.commit }}<br />
+										<strong>Parent Resource ID:</strong>
+										{{log_entry.parentResourceId}}<br />
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</body>
+</html>

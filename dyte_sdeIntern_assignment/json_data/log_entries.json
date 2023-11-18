@@ -1,0 +1,10 @@
+{
+	"level": "error",
+	"message": "failed to connect to DB",
+	"resourceId": "server-1234",
+	"timestamp": "2023-11-17T13:33:29+00:00",
+	"traceId": "abc-xyz-123",
+	"spanId": "span-456",
+	"commit": "5e5342f",
+	"metadata": { "parentResourceId": "server-09887" }
+}
