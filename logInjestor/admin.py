@@ -4,7 +4,7 @@ from .models import LogEntry
 import json
 
 class LogEntryAdmin(admin.ModelAdmin):
-    # your existing configurations...
+    
 
     def save_model(self, request, obj, form, change):
         # Save the LogEntry instance

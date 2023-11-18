@@ -1,4 +1,3 @@
-# log_ingestor/models.py
 from django.db import models
 
 class LogEntry(models.Model):
