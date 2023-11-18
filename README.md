@@ -46,5 +46,5 @@ http://127.0.0.1:3000/admin
 
 - Framework: Django-python
 - Database: postgresql,django-admin-panel
-- To run filters and queries through database: django-filter
+- To run filters and queries through database and to make it smooth and fast: django-filter
 - Additionally for large databases we can implement message queue.To implement a message queue for log ingestion in Django, we can use Celery as a task queue and RabbitMQ as a message broker. 
