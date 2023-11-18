@@ -1,7 +1,9 @@
 
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django_filters.views import FilterView
 from .models import LogEntry
+from .filters import LogEntryFilter
 from django.shortcuts import render
 import json
 
@@ -25,3 +27,9 @@ def homepage(request):
     log_entries = LogEntry.objects.all()
 
     return render(request, 'homepage.html', {'log_entries': log_entries})
+
+class LogSearchView(FilterView):
+    model = LogEntry
+    template_name = 'log_search.html'
+    filterset_class = LogEntryFilter
+    context_object_name = 'log_entries'

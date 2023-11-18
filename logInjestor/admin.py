@@ -28,7 +28,7 @@ class LogEntryAdmin(admin.ModelAdmin):
         json_file_path = 'dyte_sdeIntern_assignment/json_data/log_entries.json'
         with open(json_file_path, 'a') as json_file:
             json.dump(log_data, json_file)
-            json_file.write('\n')  # Add a newline for each entry
+            json_file.write('\n')  
 
 # Register the LogEntry model with the custom admin class
 admin.site.register(LogEntry, LogEntryAdmin)

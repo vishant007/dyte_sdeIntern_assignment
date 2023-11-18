@@ -1,0 +1,19 @@
+<!-- log_ingestor/templates/log_search.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Log Search</title>
+	</head>
+	<body>
+		<h1>Log Search</h1>
+		<form method="get">
+			{{ filter.form.as_p }}
+			<input type="submit" value="Search" />
+		</form>
+		<ul>
+			{% for log_entry in log_entries %}
+			<li>{{ log_entry.timestamp }} - {{ log_entry.message }}</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>
